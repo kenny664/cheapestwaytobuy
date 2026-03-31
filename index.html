@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheapestWayToBuy.com | Mortgage & Real Estate Blog by Kenny Merdan</title>
+  <meta name="description" content="Mortgage and real estate education from Kenny Merdan — licensed mortgage broker with 26 years experience. YouTube episodes turned into in-depth articles on FHA, VA, DSCR loans, home buying, and investing." />
+  <meta name="keywords" content="mortgage tips, home buying guide, FHA loan, VA loan, DSCR loan, real estate investing, Kenny Merdan, mortgage education" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B2A4A;
+      --navy-dark: #111D33;
+      --green: #32CD32;
+      --green-dark: #28A528;
+      --white: #FFFFFF;
+      --light-gray: #F4F6FB;
+      --mid-gray: #6B7280;
+      --border: #E5E7EB;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--white); }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-logo { color: var(--white); font-size: 1.3rem; font-weight: 900; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green);
+      color: var(--navy) !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #243660 100%);
+      color: var(--white);
+      padding: 70px 5% 80px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(50,205,50,0.15);
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .blog-hero h1 span { color: var(--green); }
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .search-bar {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      color: var(--navy);
+    }
+    .search-bar button {
+      background: var(--green);
+      color: var(--navy);
+      border: none;
+      padding: 14px 24px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .search-bar button:hover { background: var(--green-dark); color: var(--white); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--green);
+      padding: 14px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    /* ── LAYOUT ── */
+    .main-content { padding: 56px 5%; max-width: 1280px; margin: 0 auto; }
+
+    /* ── CATEGORY TABS ── */
+    .category-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    .cat-tab {
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      background: var(--light-gray);
+      color: var(--mid-gray);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-tab.active { background: var(--navy); color: var(--white); border-color: var(--green); }
+    .cat-tab:hover:not(.active) { background: var(--navy); color: var(--white); }
+
+    /* ── FEATURED POST ── */
+    .featured-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(27,42,74,0.08);
+      margin-bottom: 60px;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .featured-post:hover { box-shadow: 0 10px 44px rgba(27,42,74,0.15); }
+    .featured-video {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #243660 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+    .featured-video .bg-emoji { font-size: 5rem; opacity: 0.4; position: absolute; }
+    .featured-video .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(50,205,50,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(50,205,50,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .play-btn {
+      position: relative;
+      z-index: 2;
+      width: 68px;
+      height: 68px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--navy);
+      box-shadow: 0 4px 24px rgba(50,205,50,0.45);
+      transition: transform 0.2s;
+    }
+    .featured-post:hover .play-btn { transform: scale(1.1); }
+    .video-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(50,205,50,0.92);
+      color: var(--navy);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .featured-content {
+      background: var(--white);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .post-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .tag-green { background: rgba(50,205,50,0.12); color: var(--green-dark); }
+    .tag-navy  { background: rgba(27,42,74,0.08);  color: var(--navy); }
+    .tag-blue  { background: rgba(59,130,246,0.1);  color: #1D4ED8; }
+    .tag-gold  { background: rgba(180,140,30,0.1);  color: #92620A; }
+    .featured-content h2 {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .featured-post:hover .featured-content h2 { color: var(--green-dark); }
+    .featured-content > p {
+      font-size: 0.95rem;
+      color: var(--mid-gray);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+    .post-meta .author { color: var(--navy); font-weight: 700; }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 18px;
+      transition: gap 0.2s;
+    }
+    .read-more:hover { gap: 10px; }
+
+    /* ── POSTS GRID ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .section-header h3 { font-size: 1.3rem; font-weight: 900; color: var(--navy); }
+    .see-all { color: var(--green-dark); font-weight: 700; font-size: 0.88rem; }
+    .see-all:hover { text-decoration: underline; }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .post-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      background: var(--white);
+      cursor: pointer;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 32px rgba(27,42,74,0.11);
+      border-color: var(--green);
+    }
+    .post-thumb {
+      height: 185px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-thumb .thumb-emoji { font-size: 3rem; position: relative; z-index: 1; }
+    .thumb-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 10px 14px;
+      background: linear-gradient(to top, rgba(17,29,51,0.88), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .read-time { font-size: 0.7rem; color: rgba(255,255,255,0.82); font-weight: 600; }
+    .video-icon {
+      font-size: 0.68rem;
+      background: rgba(50,205,50,0.88);
+      color: var(--navy);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .post-body { padding: 20px; }
+    .post-body .post-tags { margin-bottom: 10px; }
+    .post-body h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .post-card:hover .post-body h3 { color: var(--green-dark); }
+    .post-body p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.65; margin-bottom: 14px; }
+    .post-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .post-footer .read-inline {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    /* ── VIDEO STRIP ── */
+    .video-posts-section {
+      background: var(--light-gray);
+      padding: 60px 5%;
+    }
+    .video-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .video-card {
+      background: var(--navy);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(27,42,74,0.3); }
+    .video-card-thumb {
+      height: 150px;
+      background: linear-gradient(135deg, #1a2a4a, #0d1a2e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      position: relative;
+    }
+    .video-card-thumb .vc-play {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--navy);
+      font-weight: 900;
+    }
+    .video-card-body { padding: 16px 18px 20px; }
+    .video-card-body h4 { color: var(--white); font-size: 0.9rem; font-weight: 700; line-height: 1.45; margin-bottom: 8px; }
+    .video-card-body p { color: rgba(255,255,255,0.55); font-size: 0.76rem; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      padding: 76px 5%;
+      text-align: center;
+    }
+    .newsletter-section h2 { color: var(--white); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; margin-bottom: 14px; }
+    .newsletter-section h2 span { color: var(--green); }
+    .newsletter-section > p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 30px; line-height: 1.7; font-size: 0.97rem; }
+    .newsletter-form {
+      display: flex;
+      max-width: 460px;
+      margin: 0 auto 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 18px;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      color: var(--navy);
+    }
+    .newsletter-form button {
+      background: var(--green);
+      color: var(--navy);
+      border: none;
+      padding: 14px 22px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .newsletter-form button:hover { background: var(--green-dark); color: var(--white); }
+    .newsletter-note { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+    /* ── AUTHOR CARD ── */
+    .about-author-section { padding: 64px 5%; background: var(--white); }
+    .author-card {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .author-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 4px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--green);
+      flex-shrink: 0;
+      letter-spacing: -1px;
+    }
+    .author-info h3 { font-size: 1.35rem; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .author-title { font-size: 0.85rem; color: var(--green-dark); font-weight: 700; margin-bottom: 14px; }
+    .author-bio { font-size: 0.93rem; color: var(--mid-gray); line-height: 1.75; margin-bottom: 18px; }
+    .author-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .author-link {
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .author-link-navy { background: var(--navy); color: var(--white); }
+    .author-link-navy:hover { background: var(--navy-dark); }
+    .author-link-outline { border: 2px solid var(--navy); color: var(--navy); }
+    .author-link-outline:hover { background: var(--navy); color: var(--white); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      text-align: center;
+      padding: 76px 5%;
+    }
+    .cta-banner h2 { color: var(--navy); margin-bottom: 12px; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; }
+    .cta-banner > p { color: rgba(27,42,74,0.75); margin-bottom: 34px; font-size: 1.05rem; }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+      padding: 15px 36px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      display: inline-block;
+      transition: transform 0.2s, background 0.2s;
+      margin: 6px;
+    }
+    .btn-navy:hover { background: var(--navy-dark); transform: translateY(-2px); }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      padding: 13px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin: 6px;
+      transition: transform 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.6);
+      padding: 44px 5% 32px;
+      font-size: 0.82rem;
+      line-height: 1.9;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 0 auto 28px;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+    .footer-logo { font-size: 1.2rem; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+    .footer-logo span { color: var(--green); }
+    .footer-col h4 { color: rgba(255,255,255,0.85); font-size: 0.83rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer-col a { display: block; margin-bottom: 6px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--green); }
+    .eho-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin: 16px auto;
+    }
+    .eho-icon {
+      width: 28px; height: 28px;
+      border: 2px solid currentColor;
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 900; flex-shrink: 0;
+    }
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 20px 0; }
+    .compliance { max-width: 800px; margin: 0 auto; font-size: 0.75rem; color: rgba(255,255,255,0.4); line-height: 1.8; text-align: center; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-video { min-height: 220px; }
+    }
+    @media (max-width: 640px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+      .author-card { flex-direction: column; text-align: center; }
+      .author-links { justify-content: center; }
+      .trust-bar { gap: 16px; }
+      .footer-top { flex-direction: column; text-align: center; }
+      .category-tabs { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div style="display:flex;flex-direction:column;gap:2px;">
+    <div class="nav-logo"><span>Cheapest</span>WayToBuy.com</div>
+    <div style="font-size:0.64rem;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:0.5px;">Mortgage & Real Estate Blog by <strong style="color:rgba(255,255,255,0.75);">Kenny Merdan</strong></div>
+  </div>
+  <div class="nav-links">
+    <a href="#home-buying">Home Buying</a>
+    <a href="#mortgage-tips">Mortgage Tips</a>
+    <a href="#investing">Investing</a>
+    <a href="https://www.applywithkenny.com">ApplyWithKenny.com</a>
+    <a href="https://www.applywithkenny.com" class="nav-cta">Work With Kenny</a>
+  </div>
+</nav>
+
+<!-- ── EDUCATIONAL DISCLAIMER BANNER ── -->
+<div style="background:#FEF9C3;border-bottom:1px solid #FDE047;padding:9px 5%;text-align:center;font-size:0.8rem;color:#713F12;font-weight:600;">
+  📚 This website is for <strong>educational and informational purposes only</strong> and does not constitute a mortgage advertisement, commitment to lend, or financial advice.
+  For mortgage services, visit <a href="https://www.applywithkenny.com" style="color:#713F12;text-decoration:underline;">ApplyWithKenny.com</a>.
+</div>
+
+<!-- ── HERO ── -->
+<div class="blog-hero">
+  <div class="eyebrow">📺 YouTube Videos Turned Into Blog Posts</div>
+  <h1>Mortgage & Real Estate Education<br/>from a <span>26-Year Industry Veteran</span></h1>
+  <p>Kenny Merdan breaks down mortgages, loan programs, and home buying strategies in plain English — no jargon, no sales pitch. Every article starts as a live Mortgage Talk episode.</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Search tips, loan types, guides…" />
+    <button>Search</button>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item">📺 Video → In-Depth Articles</div>
+  <div class="trust-item">🏆 26 Years of Mortgage Experience</div>
+  <div class="trust-item">📚 Educational Content Only</div>
+  <div class="trust-item">📍 TX &amp; MN Licensed</div>
+  <div class="trust-item">🔒 NMLS 1504326</div>
+</div>
+
+<!-- ── MAIN ── -->
+<div class="main-content">
+
+  <!-- Category Tabs -->
+  <div class="category-tabs">
+    <div class="cat-tab active">All Posts</div>
+    <div class="cat-tab">📺 Video Breakdowns</div>
+    <div class="cat-tab" id="home-buying">🏠 Home Buying</div>
+    <div class="cat-tab" id="mortgage-tips">💰 Mortgage Tips</div>
+    <div class="cat-tab" id="investing">📈 Real Estate Investing</div>
+    <div class="cat-tab">🔄 Refinancing</div>
+  </div>
+
+  <!-- ── FEATURED POST ── -->
+  <div class="featured-label">⭐ Featured Post</div>
+  <a href="fha-loan-texas-35-percent-down.html" class="featured-post">
+    <div class="featured-video">
+      <div class="grid-pattern"></div>
+      <span class="bg-emoji">🏡</span>
+      <div class="video-badge">📺 Video Breakdown</div>
+      <div class="play-btn">▶</div>
+    </div>
+    <div class="featured-content">
+      <div class="post-tags">
+        <span class="tag tag-green">🏠 Home Buying</span>
+        <span class="tag tag-navy">FHA Loan</span>
+        <span class="tag tag-navy">📺 Video</span>
+      </div>
+      <h2>How to Buy a House in Texas with Just 3.5% Down — Full FHA Loan Breakdown</h2>
+      <p>Kenny breaks down exactly what it takes to buy a home in Texas using an FHA loan — credit requirements, down payment assistance options, and the step-by-step process from application to keys in hand. Turned from a full Mortgage Talk LIVE episode.</p>
+      <div class="post-meta">
+        <span class="author">Kenny Merdan</span>
+        <span>March 25, 2026</span>
+        <span>8 min read</span>
+      </div>
+      <span class="read-more">Read Full Article →</span>
+    </div>
+  </a>
+
+  <!-- ── LATEST ARTICLES ── -->
+  <div class="section-header">
+    <h3>Latest Articles</h3>
+    <a href="#" class="see-all">See All Posts →</a>
+  </div>
+
+  <div class="posts-grid">
+
+    <!-- Post 1 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#1B2A4A,#243660);">
+        <span class="thumb-emoji">🎖️</span>
+        <div class="thumb-overlay">
+          <span class="read-time">6 min read</span>
+          <span class="video-icon">Video</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-green">VA Loans</span>
+          <span class="tag tag-navy">📺 Video</span>
+        </div>
+        <h3>VA Loan vs. FHA Loan: Which Is Actually Better for You?</h3>
+        <p>If you've served, the VA loan is usually the single best mortgage product available. Kenny breaks down why — and the rare cases where FHA still wins.</p>
+        <div class="post-footer">
+          <span class="date">March 22, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 2 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#1a3525,#1B4A2A);">
+        <span class="thumb-emoji">💳</span>
+        <div class="thumb-overlay">
+          <span class="read-time">5 min read</span>
+          <span class="video-icon">Video</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-green">Mortgage Tips</span>
+          <span class="tag tag-navy">Credit</span>
+        </div>
+        <h3>What Credit Score Do You Actually Need to Get a Mortgage in 2026?</h3>
+        <p>Lenders won't always tell you the real minimum. Kenny explains the score thresholds for FHA, VA, Conventional, and DSCR loans — and how to improve fast.</p>
+        <div class="post-footer">
+          <span class="date">March 19, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 3 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#2a1B4A,#1B2A4A);">
+        <span class="thumb-emoji">💰</span>
+        <div class="thumb-overlay">
+          <span class="read-time">7 min read</span>
+          <span class="video-icon">Video</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-blue">Down Payment</span>
+          <span class="tag tag-green">First-Time Buyer</span>
+        </div>
+        <h3>Down Payment Assistance in Texas: Programs Most Buyers Don't Know Exist</h3>
+        <p>There are dozens of DPA programs in Texas that can cover your down payment and closing costs. Kenny walks through the most accessible ones for 2026.</p>
+        <div class="post-footer">
+          <span class="date">March 16, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 4 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#1B3A4A,#0d2535);">
+        <span class="thumb-emoji">📊</span>
+        <div class="thumb-overlay">
+          <span class="read-time">9 min read</span>
+          <span class="video-icon">Video</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-green">Investing</span>
+          <span class="tag tag-navy">DSCR Loans</span>
+        </div>
+        <h3>DSCR Loans: The Easiest Way to Finance Investment Properties in 2026</h3>
+        <p>DSCR loans qualify you based on the property's rental income — not your tax returns. Kenny explains how they work and when to use them.</p>
+        <div class="post-footer">
+          <span class="date">March 12, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 5 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#2a2a1B,#3a3520);">
+        <span class="thumb-emoji">🔄</span>
+        <div class="thumb-overlay">
+          <span class="read-time">6 min read</span>
+          <span class="video-icon">Video</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-green">Refinancing</span>
+          <span class="tag tag-gold">Rates</span>
+        </div>
+        <h3>When Does It Make Sense to Refinance? The Break-Even Math Explained</h3>
+        <p>Refinancing isn't always the right move. Kenny walks through the actual math — how to calculate your break-even point and decide if it's worth it.</p>
+        <div class="post-footer">
+          <span class="date">March 9, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 6 -->
+    <a href="fha-loan-texas-35-percent-down.html" class="post-card">
+      <div class="post-thumb" style="background:linear-gradient(135deg,#1B2A2A,#0d2a2a);">
+        <span class="thumb-emoji">📱</span>
+        <div class="thumb-overlay">
+          <span class="read-time">4 min read</span>
+          <span class="video-icon">TikTok</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="tag tag-green">Mortgage Tips</span>
+          <span class="tag tag-navy">Rates</span>
+        </div>
+        <h3>Can You Still Afford to Buy a Home in 2026? Real Numbers from a Broker</h3>
+        <p>Kenny runs live affordability math — what a $350K, $400K, and $450K home actually costs per month in Texas at today's rates.</p>
+        <div class="post-footer">
+          <span class="date">March 5, 2026</span>
+          <span class="read-inline">Read →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div><!-- end main-content -->
+
+<!-- ── MORTGAGE TALK VIDEO STRIP ── -->
+<div class="video-posts-section">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-header" style="margin-bottom:28px;max-width:none;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--green-dark);margin-bottom:8px;">From The Show</div>
+        <h3 style="font-size:1.35rem;font-weight:900;color:var(--navy);">Mortgage Talk Live — Recent Highlights</h3>
+      </div>
+      <a href="https://www.tiktok.com/@mortgagetalk" target="_blank" style="color:var(--green-dark);font-weight:700;font-size:0.88rem;white-space:nowrap;">Watch on TikTok →</a>
+    </div>
+    <div class="video-strip">
+      <div class="video-card">
+        <div class="video-card-thumb">
+          🏡
+          <div class="vc-play">▶</div>
+        </div>
+        <div class="video-card-body">
+          <h4>Live Rate Quote: $400K Home in Texas — What's the Real Monthly Payment?</h4>
+          <p>Mar 24 · Mortgage Talk LIVE</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-card-thumb">
+          🏠
+          <div class="vc-play">▶</div>
+        </div>
+        <div class="video-card-body">
+          <h4>First-Time Buyer Called In: Here's What We Found for Her Credit Score</h4>
+          <p>Mar 21 · Mortgage Talk LIVE</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-card-thumb">
+          💸
+          <div class="vc-play">▶</div>
+        </div>
+        <div class="video-card-body">
+          <h4>Viewer Question: "My Bank Said I Need 20% Down — Is That True?"</h4>
+          <p>Mar 18 · Mortgage Talk LIVE</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-card-thumb">
+          📈
+          <div class="vc-play">▶</div>
+        </div>
+        <div class="video-card-body">
+          <h4>DSCR vs. Conventional for Investment Property — Live Side-by-Side Breakdown</h4>
+          <p>Mar 14 · Mortgage Talk LIVE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NEWSLETTER ── -->
+<div class="newsletter-section">
+  <h2>Get Mortgage Tips <span>Every Week</span></h2>
+  <p>No spam. One email a week with the latest rates, loan program updates, and video breakdowns from Kenny — straight to your inbox.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="your@email.com" />
+    <button>Subscribe Free</button>
+  </div>
+  <p class="newsletter-note">Unsubscribe anytime. No spam, ever.</p>
+</div>
+
+<!-- ── ABOUT AUTHOR ── -->
+<div class="about-author-section">
+  <div style="text-align:center;margin-bottom:32px;">
+    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--green-dark);margin-bottom:8px;">About the Author</div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--navy);">Written by a Broker, Not a Content Farm</h2>
+  </div>
+  <div class="author-card">
+    <div class="author-avatar">KM</div>
+    <div class="author-info">
+      <h3>Kenny Merdan</h3>
+      <div class="author-title">Licensed Mortgage Broker &nbsp;|&nbsp; NMLS #1504326 &nbsp;|&nbsp; Texas &amp; Minnesota</div>
+      <div class="author-bio">Everything on this blog comes directly from Kenny's 26 years of hands-on mortgage experience. No AI-generated filler. No affiliate spam. Just the real advice Kenny gives his clients every day — and shares live on Mortgage Talk. Every article starts as a real episode where real buyers call in with real questions.</div>
+      <div class="author-links">
+        <a href="https://www.applywithkenny.com" class="author-link author-link-navy">Work With Kenny</a>
+        <a href="https://www.applywithkenny.com" class="author-link author-link-outline">ApplyWithKenny.com</a>
+        <a href="https://www.tiktok.com/@mortgagetalk" class="author-link author-link-outline">📱 @mortgagetalk</a>
+        <a href="tel:6514171085" class="author-link author-link-outline">📞 651-417-1085</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner">
+  <h2>Ready to Talk to a Broker?</h2>
+  <p>This blog is for education only. When you're ready to take the next step, visit ApplyWithKenny.com to work with Kenny directly.</p>
+  <div>
+    <a href="https://www.applywithkenny.com" class="btn-navy">Visit ApplyWithKenny.com</a>
+    <a href="https://calendly.com/applywithkenny/30min" class="btn-white">Schedule a Free Call</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo"><span>Cheapest</span>WayToBuy.com</div>
+      <div>Kenny Merdan, NMLS #1504326<br/><strong style="color:rgba(255,255,255,0.75);">NEXA</strong> Lending LLC<br/>651-417-1085<br/>kenny@applywithkenny.com</div>
+    </div>
+    <div class="footer-col">
+      <h4>Blog Categories</h4>
+      <a href="#">Home Buying Guides</a>
+      <a href="#">Mortgage Tips</a>
+      <a href="#">Real Estate Investing</a>
+      <a href="#">Refinancing</a>
+      <a href="#">Video Breakdowns</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.applywithkenny.com">ApplyWithKenny.com</a>
+      <a href="https://calendly.com/applywithkenny/30min">Schedule a Free Call</a>
+      <a href="https://www.tiktok.com/@mortgagetalk">TikTok @mortgagetalk</a>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin:16px 0;">
+    <div class="eho-badge">
+      <div class="eho-icon">=</div>
+      <span>Equal Housing Lender</span>
+    </div>
+    <a href="https://www.nexalending.com" target="_blank" style="color:rgba(255,255,255,0.7);font-weight:700;">
+      <span style="color:var(--green);font-weight:900;">NEXA</span> Lending LLC
+    </a>
+  </div>
+  <hr class="divider"/>
+  <div class="compliance">
+    <strong>Kenny Merdan</strong> | NMLS #1504326 | Licensed Mortgage Loan Originator in Texas and Minnesota<br/>
+    <strong>NEXA Lending LLC</strong> | Corporate NMLS #1660690 | 5559 S Sossaman Rd Bldg #1 Ste #101, Mesa, AZ 85212 |
+    <a href="https://www.nexalending.com" target="_blank" style="color:rgba(255,255,255,0.4);">www.NEXALending.com</a><br/>
+    <a href="https://nmlsconsumeraccess.org/TuringTestPage.aspx?ReturnUrl=/EntityDetails.aspx/COMPANY/1660690" target="_blank" style="color:rgba(255,255,255,0.4);">NMLS Consumer Access</a>
+    &nbsp;|&nbsp;
+    <a href="https://bit.ly/3B5pAfz" target="_blank" style="color:rgba(255,255,255,0.4);">Texas Complaint &amp; Recovery Fund Notice</a><br/><br/>
+    <strong>Educational Content Disclosure:</strong> CheapestWayToBuy.com is an informational and educational resource only. Content on this site does not constitute a mortgage advertisement, a commitment to lend, financial advice, or legal advice. No rates, fees, or loan terms are advertised on this site. For mortgage services, please visit <a href="https://www.applywithkenny.com" style="color:rgba(255,255,255,0.4);">ApplyWithKenny.com</a>. All loans subject to credit approval. Loan programs subject to change without notice.<br/>
+    © 2026 CheapestWayToBuy.com | Kenny Merdan | All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

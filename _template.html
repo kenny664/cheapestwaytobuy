@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>BLOG_TITLE | CheapestWayToBuy.com</title>
+  <meta name='description' content='BLOG_DESCRIPTION' />
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap' rel='stylesheet' />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1B2A4A; --navy-dark: #111D33; --green: #32CD32; --green-dark: #28A528; --white: #FFFFFF; --light-gray: #F4F6FB; --mid-gray: #6B7280; --border: #E5E7EB; }
+    body { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--white); }
+    a { text-decoration: none; color: inherit; }
+    nav { background: var(--navy); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+    .nav-logo { color: var(--white); font-size: 1.3rem; font-weight: 900; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--navy) !important; padding: 10px 20px; border-radius: 6px; font-weight: 700; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--green-dark); }
+    .disclaimer { background: #FFF3CD; border-bottom: 2px solid #FFC107; padding: 10px 5%; text-align: center; font-size: 0.82rem; color: #856404; }
+    .disclaimer strong { font-weight: 700; }
+    .article-header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #243660 100%); padding: 60px 5% 64px; color: var(--white); }
+    .article-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 4px 10px; border-radius: 4px; }
+    .tag-green { background: rgba(50,205,50,0.2); color: var(--green); }
+    .tag-white { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+    .article-header h1 { font-size: clamp(1.7rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.2; max-width: 760px; margin-bottom: 20px; }
+    .article-header h1 span { color: var(--green); }
+    .article-meta { display: flex; align-items: center; gap: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.65); flex-wrap: wrap; }
+    .article-meta .author-chip { display: flex; align-items: center; gap: 10px; }
+    .author-mini-avatar { width: 36px; height: 36px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 900; color: var(--navy); flex-shrink: 0; }
+    .author-chip-name { color: var(--white); font-weight: 700; }
+    .article-layout { display: grid; grid-template-columns: 1fr 300px; gap: 56px; max-width: 1200px; margin: 0 auto; padding: 56px 5%; align-items: start; }
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    .article-body h2 { font-size: 1.55rem; font-weight: 900; color: var(--navy); margin: 40px 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--border); line-height: 1.3; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin: 28px 0 10px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin-bottom: 18px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 18px; }
+    .article-body li { font-size: 1rem; line-height: 1.7; margin-bottom: 8px; color: #374151; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.92rem; }
+    .article-body th { background: var(--navy); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 700; }
+    .article-body td { padding: 11px 16px; border-bottom: 1px solid var(--border); }
+    .article-body tr:nth-child(even) td { background: var(--light-gray); }
+    .callout { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid var(--green); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 28px 0; }
+    .callout strong { color: var(--navy); font-weight: 800; }
+    .sidebar { position: sticky; top: 90px; }
+    .sidebar-card { background: var(--light-gray); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    .sidebar-cta { background: linear-gradient(135deg, var(--navy), var(--navy-dark)); color: var(--white); text-align: center; }
+    .cta-btn { display: block; background: var(--green); color: var(--navy); padding: 14px 20px; border-radius: 8px; font-weight: 700; margin-top: 14px; text-align: center; transition: background 0.2s; }
+    .cta-btn:hover { background: var(--green-dark); color: var(--white); }
+    .author-box { background: var(--light-gray); border-radius: 12px; padding: 28px; margin: 48px 0 0; display: flex; gap: 20px; align-items: flex-start; }
+    .author-avatar { width: 64px; height: 64px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; color: var(--green); flex-shrink: 0; }
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 48px 5% 32px; font-size: 0.82rem; line-height: 1.7; }
+    .footer-logo { color: var(--white); font-weight: 900; font-size: 1.25rem; margin-bottom: 16px; }
+    .footer-logo span { color: var(--green); }
+    .footer-legal { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  </style>
+</head>
+<body>
+  <div class='disclaimer'><strong>Educational Content Only:</strong> CheapestWayToBuy.com is an informational and educational resource only. This is not a mortgage advertisement. No rates, fees, or loan terms are quoted on this site.</div>
+  <nav>
+    <div class='nav-logo'>Cheapest<span>WayToBuy</span>.com</div>
+    <div>
+      <a href='index.html' style='color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:600;margin-right:24px;'>← All Articles</a>
+      <a href='https://www.applywithkenny.com' class='nav-cta'>Work With Kenny</a>
+    </div>
+  </nav>
+
+  <div class='article-header'>
+    <div class='article-tags'>
+      <span class='tag tag-green'>BLOG_CATEGORY</span>
+      <span class='tag tag-white'>Educational</span>
+    </div>
+    <h1>BLOG_TITLE</h1>
+    <div class='article-meta'>
+      <div class='author-chip'>
+        <div class='author-mini-avatar'>KM</div>
+        <span class='author-chip-name'>Kenny Merdan</span>
+      </div>
+      <span>·</span>
+      <span>BLOG_DATE</span>
+      <span>·</span>
+      <span>BLOG_READ_TIME</span>
+    </div>
+  </div>
+
+  <div class='article-layout'>
+    <article class='article-body'>
+      BLOG_CONTENT
+      <div class='author-box'>
+        <div class='author-avatar'>KM</div>
+        <div>
+          <div style='font-weight:800;font-size:1.05rem;margin-bottom:6px;'>Kenny Merdan</div>
+          <p style='font-size:0.9rem;color:var(--mid-gray);margin:0;'>26-year mortgage industry veteran licensed in TX, FL, and CO. Founder of ApplyWithKenny.com. This article is for educational purposes only and does not constitute mortgage advice or advertising.</p>
+        </div>
+      </div>
+    </article>
+    <aside class='sidebar'>
+      <div class='sidebar-card sidebar-cta'>
+        <div style='font-weight:900;font-size:1.1rem;margin-bottom:8px;'>Ready to Apply?</div>
+        <p style='font-size:0.88rem;color:rgba(255,255,255,0.75);margin-bottom:4px;'>Work directly with Kenny — 26 years of mortgage experience.</p>
+        <a href='https://www.applywithkenny.com' class='cta-btn'>Get Started at ApplyWithKenny.com →</a>
+      </div>
+      <div class='sidebar-card'>
+        <div style='font-weight:800;margin-bottom:12px;font-size:1rem;'>About Kenny Merdan</div>
+        <p style='font-size:0.88rem;color:var(--mid-gray);margin-bottom:12px;'>26-year mortgage industry veteran. Licensed originator in TX, FL, and CO. Host of Mortgage Talk.</p>
+        <a href='https://www.applywithkenny.com' style='font-size:0.85rem;font-weight:700;color:var(--navy);border-bottom:2px solid var(--green);padding-bottom:2px;'>Visit ApplyWithKenny.com →</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class='footer-logo'>Cheapest<span>WayToBuy</span>.com</div>
+    <p>Educational content and mortgage insights from Kenny Merdan, a 26-year industry veteran.</p>
+    <div class='footer-legal'>
+      <strong style='color:rgba(255,255,255,0.55);'>Educational Content Disclosure:</strong> CheapestWayToBuy.com is an informational and educational resource only. The content on this site does not constitute a mortgage advertisement under Regulation Z (TILA). No specific rates, fees, APR, or loan terms are advertised. All loan inquiries and applications are handled exclusively through <a href='https://www.applywithkenny.com' style='color:var(--green);'>ApplyWithKenny.com</a>. Content is provided for general educational purposes only and should not be construed as financial or legal advice.
+    </div>
+  </footer>
+</body>
+</html>
